@@ -27,7 +27,6 @@ body {
 
 /* add styles here */
 
-/*  */
 header {
     background-image: url(images/florence.jpg);
     background-size: cover;
@@ -36,13 +35,15 @@ header {
 }
 
 #topbar {
+    --logo-size: 60px;
+    --logo-offset: 5px;
     position: relative;
     background-image: url(images/logo.png);
     background-repeat: no-repeat;
-    background-size: 60px;
-    size: 60px;
-    padding: 10px 0px 0px 100px;
-    height: 60px;
+    background-size: var(--logo-size);
+    background-position: var(--logo-offset) var(--logo-offset); /*right offset, down offset*/
+    padding: calc(var(--logo-offset) + 10px) 0px 0px 100px;
+    height: calc(var(--logo-size) + var(--logo-offset))
 }
 
 #topbar li {
@@ -57,6 +58,10 @@ nav ul a {
     color: #51279b;
     font-weight: 600;
     padding: 10px;
+}
+
+header > div > p {
+    font-weight: 600;
 }
 
 header div a {
